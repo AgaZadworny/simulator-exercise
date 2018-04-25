@@ -36,8 +36,8 @@ public class Snail implements Animal {
     }
 
     @Override
-    public boolean isAlive() {
-        return hasEaten;
+    public boolean isHungry() {
+        return !hasEaten;
     }
 
     @Override

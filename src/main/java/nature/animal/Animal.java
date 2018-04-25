@@ -19,5 +19,5 @@ public interface Animal extends Comparable<Animal> {
     double getSizeKg();
 
 
-    boolean isAlive();
+    boolean isHungry();
 }

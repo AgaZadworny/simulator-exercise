@@ -35,8 +35,8 @@ public class Chicken implements Animal {
     }
 
     @Override
-    public boolean isAlive() {
-        return hasEaten;
+    public boolean isHungry() {
+        return !hasEaten;
     }
 
     @Override

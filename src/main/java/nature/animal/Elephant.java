@@ -10,7 +10,9 @@ public class Elephant implements Animal {
 
     @Override
     public boolean eat(FoodRepository foodRepository) {
+
         double amountToEat = sizeKg / 100;
+
         if (foodRepository.consume(amountToEat)) {
             sizeKg += amountToEat;
             return hasEaten = true;
@@ -24,6 +26,7 @@ public class Elephant implements Animal {
 
     @Override
     public Poop poop() {
+
         if (hasEaten) {
             hasEaten = false;
             return new Poop(sizeKg / 150);
@@ -36,8 +39,8 @@ public class Elephant implements Animal {
     }
 
     @Override
-    public boolean isAlive() {
-        return hasEaten;
+    public boolean isHungry() {
+        return !hasEaten;
     }
 
     @Override

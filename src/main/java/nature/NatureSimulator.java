@@ -49,14 +49,14 @@ public class NatureSimulator {
         return "Environment" +
                 "\ncontamination " + calculateContamination() + '%' +
                 "\nfoodState " + foodRepository.getState() +
-                "\nanimals alive " + calculateAnimalsAlive();
+                "\nhungry animals count " + countHungryAnimals();
     }
 
     private double calculateContamination() {
         return (poops.stream().mapToDouble(Poop::getSize).sum() / size) * 100;
     }
 
-    private long calculateAnimalsAlive() {
-        return (animals.stream().filter(Animal::isAlive)).count();
+    private long countHungryAnimals() {
+        return (animals.stream().filter(Animal::isHungry)).count();
     }
 }
